@@ -9,3 +9,6 @@ there are some things you should know:
      "ConnectionStrings": {
        "SqlServerConection": "Server=;Database=CRUD; integrated security=true; User Id=;Password=;Encrypt=false;"
      }
+
+Here two video about how look the page in WEB and MOBILE:
+https://drive.google.com/drive/folders/15DuOLLCKzDvS1sDNiH45bYDWwW7dG-ZE?usp=sharing
