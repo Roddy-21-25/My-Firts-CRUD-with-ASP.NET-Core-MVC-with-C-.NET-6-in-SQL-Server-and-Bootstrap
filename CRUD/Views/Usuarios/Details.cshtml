@@ -1,0 +1,61 @@
+﻿@model CRUD.Models.Usuario
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="row d-flex justify-content-center align-items-center main-container">
+    <div>
+        <a id="a" asp-action="Index">
+            <button class="d-grid gap-2 col-6 mx-auto btn btn-secondary shadow-lg" type="button">Back to List</button>
+        </a>
+    </div>
+
+    <br /><br /><br /><br />
+
+    <div class="col-sm-6">
+        <div class="text-center p-3 mb-2 bg-light rounded shadow-lg p-3 mb-5"> 
+            <em><h1>Details</h1></em>
+
+            <div>
+                <h4>Usuario: @Html.DisplayFor(model => model.UserName)</h4>
+                <hr />
+
+                <dl class="row">
+                    <dt class="col-sm-6">
+                        @Html.DisplayNameFor(model => model.UserName)
+                    </dt>
+                    <dd class="col-sm-6">
+                        @Html.DisplayFor(model => model.UserName)
+                    </dd>
+                    <dt class="col-sm-6">
+                        @Html.DisplayNameFor(model => model.Nota)
+                    </dt>
+                    <dd class="col-sm-6">
+                        @Html.DisplayFor(model => model.Nota)
+                    </dd>
+                    <dt class="col-sm-6">
+                        @Html.DisplayNameFor(model => model.Grade)
+                    </dt>
+                    <dd class="col-sm-6">
+                        @Html.DisplayFor(model => model.Grade)
+                    </dd>
+                    <dt class="col-sm-6">
+                        @Html.DisplayNameFor(model => model.Materia)
+                    </dt>
+                    <dd class="col-sm-6">
+                        @Html.DisplayFor(model => model.Materia)
+                    </dd>
+                </dl>
+            </div>
+            <div >
+                <a id="a" asp-action="Edit" asp-route-id="@Model?.Id">
+                    <button type="button" class="d-grid gap-2 col-6 mx-auto btn btn-warning">Edit</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

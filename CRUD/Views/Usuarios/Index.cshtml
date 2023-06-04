@@ -1,0 +1,84 @@
+﻿@model IEnumerable<CRUD.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row d-flex justify-content-center align-items-center">
+    <div>
+        <div class="text-center p-3 mb-2 bg-light rounded shadow-lg p-3 mb-5 ">
+            <em><h1>Users Dashboard</h1></em>
+
+            <a id="a" class="text-black" asp-action="Create">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary fw-semibold" type="button">Create New User</button>
+                </div>
+                <br />
+            </a>
+            <div class="table-responsive">
+                <table class="table table-bordered rounded border-primary table-hover ">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.UserName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Nota)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Grade)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Materia)
+                            </th>
+                            <th class="text-center">
+                                CRUD ACTIONS
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UserName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nota)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Grade)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Materia)
+                                </td>
+                                <td>
+                                    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                        <a id="a" asp-action="Edit" asp-route-id="@item.Id">
+                                            <button type="button" class="btn btn-warning">Edit</button>
+                                        </a>
+
+                                        <a id="a" asp-action="Details" asp-route-id="@item.Id">
+                                            <button type="button" class="btn btn-success">Details</button>
+                                        </a>
+
+                                        <a id="a" asp-action="Delete" asp-route-id="@item.Id">
+                                            <button type="button" class="btn btn-danger">Delete</button>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

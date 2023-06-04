@@ -1,0 +1,62 @@
+﻿@model CRUD.Models.Usuario
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row d-flex justify-content-center align-items-center main-container">
+    <div>
+        <a id="a" asp-action="Index">
+            <button class="d-grid gap-2 col-6 mx-auto btn btn-secondary shadow-lg" type="button">Back to List</button>
+        </a>
+    </div>
+
+    <br /><br /><br /><br />
+
+    <div class="col-sm-6">
+        <div class ="text-center p-3 mb-2 bg-light rounded shadow-lg p-3 mb-5 ">
+            <em><h1>Edit</h1></em>
+
+                <h4>Usuario: @Html.DisplayFor(model => model.UserName)</h4>
+            <hr />
+            <div class="row">
+                <div>
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Id" />
+                        <div class="form-group">
+                            <label asp-for="UserName" class="control-label"></label>
+                            <input asp-for="UserName" class="form-control" />
+                            <span asp-validation-for="UserName" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label asp-for="Nota" class="control-label"></label>
+                            <input asp-for="Nota" class="form-control" />
+                            <span asp-validation-for="Nota" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label asp-for="Grade" class="control-label"></label>
+                            <input asp-for="Grade" class="form-control" />
+                            <span asp-validation-for="Grade" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label asp-for="Materia" class="control-label"></label>
+                            <input asp-for="Materia" class="form-control" />
+                            <span asp-validation-for="Materia" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="form-group text-center d-grid gap-2">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
